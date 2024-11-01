@@ -108,7 +108,7 @@ This project has immense potential for growth. Here are a few ideas for future e
 - **Maze Saving and Loading Functionality:** Allow users to save generated mazes and revisit them later.
 
 ## Contributors
-- **Your Name** - Developer, Designer, and Documenter of this project.
+- **NexusGK** - Developer, Designer, and Documenter of this project.
 
 ## License
 This project is licensed under the MIT License. For more details, please refer to the [LICENSE](LICENSE) file.
