@@ -114,3 +114,65 @@ This project has immense potential for growth. Here are a few ideas for future e
 This project is licensed under the MIT License. For more details, please refer to the [LICENSE](LICENSE) file.
 
 ---
+
+
+# 🌀 Maze Generator and Solver
+
+Welcome to the Maze Generator and Solver project! 🚀 This interactive program, built in C++ with SDL2, creates and solves a maze right before your eyes. Originally designed for Ubuntu, but no worries — here’s how to get it running smoothly on your Windows system! 💻✨
+
+## Prerequisites
+
+### 1. Install SDL2 🧩
+- Download the **SDL2** development libraries for Windows from the [SDL2 official website](https://www.libsdl.org/).
+- Extract the folder and place it somewhere convenient, like `C:\SDL2`.
+
+### 2. Install a C++ Compiler 🛠️
+This project works best with either **MinGW** or **Visual Studio** as the compiler.
+
+#### Option A: Using MinGW
+- Download **MinGW** from the [MinGW website](https://www.mingw-w64.org/).
+- Install MinGW, and make sure to add the `bin` directory to your system’s PATH. 🌐
+
+#### Option B: Using Visual Studio
+- If you prefer **Visual Studio**, ensure it’s set up to compile C++ projects.
+- Don’t forget to configure SDL2 paths in the project settings!
+
+## Setting Up SDL2 with Your Compiler
+
+### Setting Up SDL2 with MinGW 📝
+1. Copy `SDL2.dll` from the SDL2 folder (usually in the `lib` or `bin` folder) to your project directory.
+2. Compile your project with the following command:
+   ```bash
+   g++ maze.cpp -o maze.exe -I"C:\path\to\SDL2\include" -L"C:\path\to\SDL2\lib" -lmingw32 -lSDL2main -lSDL2
+   ```
+   🔧 Replace `C:\path\to\SDL2` with your SDL2 installation path.
+
+### Setting Up SDL2 with Visual Studio 🎨
+1. Open Visual Studio and create a new project.
+2. Go to **Project Properties**:
+   - Under **VC++ Directories**, add the `include` folder of SDL2 to **Include Directories** and the `lib` folder to **Library Directories**.
+   - Under **Linker > Input**, add `SDL2.lib` and `SDL2main.lib` to **Additional Dependencies**.
+3. Make sure `SDL2.dll` is in the project’s output directory (where your `.exe` is generated).
+
+## Running the Program 🚦
+
+1. Open a terminal in your project directory.
+2. If using MinGW, run the following:
+   ```bash
+   maze.exe
+   ```
+   👉 If using Visual Studio, press **F5** to build and run the project from within the IDE.
+
+## Troubleshooting 🛑
+
+- **SDL2.dll Not Found**: Make sure `SDL2.dll` is in the same folder as `maze.exe`.
+- **Library Linking Issues**: Double-check the SDL2 installation path and linking flags.
+
+## Additional Notes 📌
+
+- Want to adjust the maze size or cell size? Edit `WINDOW_SIZE` or `CELL_SIZE` in `maze.cpp`.
+- For the best experience, keep your graphics drivers up to date! 🎮
+
+Enjoy solving your maze adventure, and feel free to reach out if you hit a roadblock! 🚀✨
+
+---
