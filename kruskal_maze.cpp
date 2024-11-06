@@ -53,10 +53,9 @@ private:
 
 class Maze {
 public:
-    Maze(int rows, int cols) : rows(rows), cols(cols) {
+    Maze(int rows, int cols) : rows(rows), cols(cols), disjointSet(rows * cols) {  // Pass rows * cols to DisjointSet constructor
         maze.resize(rows, std::vector<int>(cols, 1)); // Initialize maze with walls (1)
         walls = generateWalls(); // Generate all possible walls
-        disjointSet = DisjointSet(rows * cols);
     }
 
     // Function to generate all possible walls
