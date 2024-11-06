@@ -54,6 +54,7 @@ private:
 class Maze {
 public:
 <<<<<<< HEAD
+<<<<<<< HEAD
     Maze(int rows, int cols) : rows(rows), cols(cols), disjointSet(rows * cols) { 
         maze.resize(rows, std::vector<int>(cols, 1)); // Initialize maze with walls (1)
         walls = generateWalls(); // Generate all possible walls
@@ -63,6 +64,11 @@ public:
         walls = generateWalls(); // Generate all possible walls
         disjointSet = DisjointSet(rows * cols);
 >>>>>>> 58fe050 ("Added Kruskal's algorithm maze generation implementation with SDL visualization")
+=======
+    Maze(int rows, int cols) : rows(rows), cols(cols), disjointSet(rows * cols) {  // Pass rows * cols to DisjointSet constructor
+        maze.resize(rows, std::vector<int>(cols, 1)); // Initialize maze with walls (1)
+        walls = generateWalls(); // Generate all possible walls
+>>>>>>> 50512ea ("Moved DisjointSet initialization to Maze constructor initializer list")
     }
 
     // Function to generate all possible walls
