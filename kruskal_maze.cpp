@@ -55,6 +55,7 @@ class Maze {
 public:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Maze(int rows, int cols) : rows(rows), cols(cols), disjointSet(rows * cols) { 
         maze.resize(rows, std::vector<int>(cols, 1)); // Initialize maze with walls (1)
         walls = generateWalls(); // Generate all possible walls
@@ -66,6 +67,9 @@ public:
 >>>>>>> 58fe050 ("Added Kruskal's algorithm maze generation implementation with SDL visualization")
 =======
     Maze(int rows, int cols) : rows(rows), cols(cols), disjointSet(rows * cols) {  // Pass rows * cols to DisjointSet constructor
+=======
+    Maze(int rows, int cols) : rows(rows), cols(cols), disjointSet(rows * cols) { 
+>>>>>>> 0ef0ffc ("Added debugging output, minor whitespace changes, and clarified wall drawing condition in Maze class.")
         maze.resize(rows, std::vector<int>(cols, 1)); // Initialize maze with walls (1)
         walls = generateWalls(); // Generate all possible walls
 >>>>>>> 50512ea ("Moved DisjointSet initialization to Maze constructor initializer list")
@@ -102,10 +106,15 @@ public:
             }
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         std::cout << "Maze generated successfully!" << std::endl;  // Debugging output
 =======
 >>>>>>> 58fe050 ("Added Kruskal's algorithm maze generation implementation with SDL visualization")
+=======
+
+        std::cout << "Maze generated successfully!" << std::endl;  // Debugging output
+>>>>>>> 0ef0ffc ("Added debugging output, minor whitespace changes, and clarified wall drawing condition in Maze class.")
     }
 
     // Function to draw the maze using SDL
@@ -113,10 +122,14 @@ public:
         for (int y = 0; y < rows; ++y) {
             for (int x = 0; x < cols; ++x) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if (maze[y][x] == 1) {  // If there's a wall
 =======
                 if (maze[y][x] == 1) {
 >>>>>>> 58fe050 ("Added Kruskal's algorithm maze generation implementation with SDL visualization")
+=======
+                if (maze[y][x] == 1) {  // If there's a wall
+>>>>>>> 0ef0ffc ("Added debugging output, minor whitespace changes, and clarified wall drawing condition in Maze class.")
                     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // White color for walls
                     SDL_Rect rect = {x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE};
                     SDL_RenderFillRect(renderer, &rect);
@@ -165,10 +178,14 @@ int main() {
 
     Maze maze(ROWS, COLS);
 <<<<<<< HEAD
+<<<<<<< HEAD
     maze.generate(); // Generate the maze
 =======
     maze.generate();
 >>>>>>> 58fe050 ("Added Kruskal's algorithm maze generation implementation with SDL visualization")
+=======
+    maze.generate(); // Generate the maze
+>>>>>>> 0ef0ffc ("Added debugging output, minor whitespace changes, and clarified wall drawing condition in Maze class.")
 
     bool quit = false;
     SDL_Event e;
