@@ -4,6 +4,8 @@
 #include <stack>
 #include <cstdlib>
 #include <ctime>
+#include <algorithm> // Include this header for std::shuffle
+#include <random>    // Include this header for random number generator
 
 // Constants for the window and maze dimensions
 const int WINDOW_WIDTH = 800;
@@ -77,10 +79,13 @@ void generateMaze() {
     maze[x][y].visited = true;
     stack.push({x, y});
 
+    std::random_device rd;
+    std::mt19937 rng(rd());
+
     while (!stack.empty()) {
         auto [cx, cy] = stack.top();
         std::vector<int> directions = {0, 1, 2, 3};
-        std::random_shuffle(directions.begin(), directions.end());
+        std::shuffle(directions.begin(), directions.end(), rng);
 
         bool moved = false;
         for (int i : directions) {
