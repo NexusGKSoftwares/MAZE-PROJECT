@@ -53,7 +53,7 @@ private:
 
 class Maze {
 public:
-    Maze(int rows, int cols) : rows(rows), cols(cols), disjointSet(rows * cols) {  // Pass rows * cols to DisjointSet constructor
+    Maze(int rows, int cols) : rows(rows), cols(cols), disjointSet(rows * cols) { 
         maze.resize(rows, std::vector<int>(cols, 1)); // Initialize maze with walls (1)
         walls = generateWalls(); // Generate all possible walls
     }
@@ -88,13 +88,15 @@ public:
                 maze[wall.y2][wall.x2] = 0; // Remove wall
             }
         }
+
+        std::cout << "Maze generated successfully!" << std::endl;  // Debugging output
     }
 
     // Function to draw the maze using SDL
     void draw(SDL_Renderer* renderer) {
         for (int y = 0; y < rows; ++y) {
             for (int x = 0; x < cols; ++x) {
-                if (maze[y][x] == 1) {
+                if (maze[y][x] == 1) {  // If there's a wall
                     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // White color for walls
                     SDL_Rect rect = {x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE};
                     SDL_RenderFillRect(renderer, &rect);
@@ -142,7 +144,7 @@ int main() {
     }
 
     Maze maze(ROWS, COLS);
-    maze.generate();
+    maze.generate(); // Generate the maze
 
     bool quit = false;
     SDL_Event e;
