@@ -53,9 +53,16 @@ private:
 
 class Maze {
 public:
+<<<<<<< HEAD
     Maze(int rows, int cols) : rows(rows), cols(cols), disjointSet(rows * cols) { 
         maze.resize(rows, std::vector<int>(cols, 1)); // Initialize maze with walls (1)
         walls = generateWalls(); // Generate all possible walls
+=======
+    Maze(int rows, int cols) : rows(rows), cols(cols) {
+        maze.resize(rows, std::vector<int>(cols, 1)); // Initialize maze with walls (1)
+        walls = generateWalls(); // Generate all possible walls
+        disjointSet = DisjointSet(rows * cols);
+>>>>>>> 58fe050 ("Added Kruskal's algorithm maze generation implementation with SDL visualization")
     }
 
     // Function to generate all possible walls
@@ -88,15 +95,22 @@ public:
                 maze[wall.y2][wall.x2] = 0; // Remove wall
             }
         }
+<<<<<<< HEAD
 
         std::cout << "Maze generated successfully!" << std::endl;  // Debugging output
+=======
+>>>>>>> 58fe050 ("Added Kruskal's algorithm maze generation implementation with SDL visualization")
     }
 
     // Function to draw the maze using SDL
     void draw(SDL_Renderer* renderer) {
         for (int y = 0; y < rows; ++y) {
             for (int x = 0; x < cols; ++x) {
+<<<<<<< HEAD
                 if (maze[y][x] == 1) {  // If there's a wall
+=======
+                if (maze[y][x] == 1) {
+>>>>>>> 58fe050 ("Added Kruskal's algorithm maze generation implementation with SDL visualization")
                     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // White color for walls
                     SDL_Rect rect = {x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE};
                     SDL_RenderFillRect(renderer, &rect);
@@ -144,7 +158,11 @@ int main() {
     }
 
     Maze maze(ROWS, COLS);
+<<<<<<< HEAD
     maze.generate(); // Generate the maze
+=======
+    maze.generate();
+>>>>>>> 58fe050 ("Added Kruskal's algorithm maze generation implementation with SDL visualization")
 
     bool quit = false;
     SDL_Event e;
