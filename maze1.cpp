@@ -67,6 +67,7 @@ void SDL_RenderDrawCircle(SDL_Renderer* renderer, int x, int y, int radius) {
     }
 }
 
+<<<<<<< HEAD
 // Function to draw the maze and the solver circle
 void drawMaze(int currentX = -1, int currentY = -1) {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
@@ -250,6 +251,8 @@ bool initSDL() {
     return true;
 }
 
+=======
+>>>>>>> b6b8e4b ("Moved SDL_RenderDrawCircle function definition, reformatted drawMaze function, and added brackets to if statement in main loop.")
 // Function to draw the maze and the solver circle
 void drawMaze(int currentX = -1, int currentY = -1) {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
@@ -281,25 +284,10 @@ void drawMaze(int currentX = -1, int currentY = -1) {
         SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
         int centerX = currentX * CELL_SIZE + CELL_SIZE / 2;
         int centerY = currentY * CELL_SIZE + CELL_SIZE / 2;
-        for (int w = 0; w < CELL_SIZE / 4; ++w) {
-            SDL_RenderDrawCircle(renderer, centerX, centerY, CELL_SIZE / 4 - w);
-        }
+        SDL_RenderDrawCircle(renderer, centerX, centerY, CELL_SIZE / 4);
     }
 
     SDL_RenderPresent(renderer);
-}
-
-// Custom function to draw a circle in SDL
-void SDL_RenderDrawCircle(SDL_Renderer* renderer, int x, int y, int radius) {
-    for (int w = 0; w < radius * 2; w++) {
-        for (int h = 0; h < radius * 2; h++) {
-            int dx = radius - w; // horizontal offset
-            int dy = radius - h; // vertical offset
-            if ((dx * dx + dy * dy) <= (radius * radius)) {
-                SDL_RenderDrawPoint(renderer, x + dx, y + dy);
-            }
-        }
-    }
 }
 
 // Function to generate the maze using a depth-first search algorithm
@@ -384,7 +372,9 @@ int main() {
     SDL_Event event;
     while (running) {
         while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_QUIT) running = false;
+            if (event.type == SDL_QUIT) {
+                running = false;
+            }
         }
     }
 
